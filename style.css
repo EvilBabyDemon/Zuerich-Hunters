@@ -339,26 +339,33 @@ section p {
     .banner h1 {
         font-size: 36px;
     }
+
     .banner p {
         font-size: 20px;
     }
+
     .hero-buttons {
         flex-direction: column;
     }
+
     .btn {
         width: 100%;
         text-align: center;
     }
+
     .nav-links {
         gap: 15px;
         margin-left: 20px;
     }
+
     section {
         padding: 30px 20px;
     }
+
     .two-column-banner {
         grid-template-columns: 1fr;
     }
+
     .contact-section {
         grid-template-columns: 1fr;
     }
