@@ -9,7 +9,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #E7E4D9;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-top: 0;
 }
 
@@ -42,7 +42,7 @@ header {
 header a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     transition: color 0.3s;
 }
 
@@ -353,9 +353,41 @@ section p {
         text-align: center;
     }
 
+    .hamburger {
+        background: none;
+        border: none;
+        font-size: 32px;
+        color: rgb(255, 184, 82);
+        cursor: pointer;
+        margin-right: 15px;
+    }
+
     .nav-links {
-        gap: 15px;
-        margin-left: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 25px;
+        display: none;
+        border-bottom: 3px solid rgb(255, 184, 82);
+        margin-left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .header-button {
+        display: none;
     }
 
     section {
@@ -368,6 +400,12 @@ section p {
 
     .contact-section {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
     }
 }
 
@@ -588,14 +626,6 @@ section p {
    HAMBURGER MENU
    ========================= */
 
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: rgb(255, 184, 82);
-    cursor: pointer;
-}
 
 
 /* =========================
@@ -663,4 +693,89 @@ section p {
     .contact-images {
         justify-content: center;
     }
+}
+
+
+/* =========================
+   LIGHTBOX
+   ========================= */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.lightbox-close:hover {
+    color: rgb(255, 184, 82);
+}
+
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 184, 82);
+    border: none;
+    font-size: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 2002;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-btn:hover {
+    background-color: rgba(255, 184, 82, 0.8);
+    color: rgb(96, 17, 10);
+}
+
+.carousel img,
+.about-img,
+.contact-img,
+.gallery-img {
+    cursor: zoom-in;
 }

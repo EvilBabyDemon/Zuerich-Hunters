@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kontakt – Zürich Hunters</title>
+        <title>Kontakt - Zürich Hunters</title>
 
         <link rel="stylesheet" href="style.css" />
 
@@ -16,105 +16,9 @@
 
     <body>
         <!-- Header  -->
-        <header>
-            <img src="Images/logo.png" alt="Logo" class="logo" />
+        <app-header></app-header>
 
-            <div class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="#" class="sidebar-trigger" data-sidebar="about"
-                    >Über uns</a
-                >
-                <a href="#" class="sidebar-trigger" data-sidebar="training"
-                    >Training</a
-                >
-                <a href="Turniere.html">Turnier</a>
-                <a href="Kontakt.html">Kontakt</a>
-            </div>
-            <a href="Kontakt.html" class="header-button">Mitmachen</a>
-            <button class="hamburger" id="hamburger">☰</button>
-        </header>
-
-        <!-- OVERLAY -->
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-        <!-- SIDEBAR: ÜBER UNS -->
-        <aside class="sidebar" id="sidebar-about">
-            <button class="sidebar-close">&times;</button>
-            <h2>Über uns</h2>
-
-            <div class="sidebar-content">
-                <p>
-                    Wir sind die Zürich Hunters, das Dodgeball Team aus deiner
-                    Stadt Zürich. Leidenschaft, Teamgeist und Action stehen bei
-                    uns im Mittelpunkt.
-                </p>
-
-                <h3>Unsere Geschichte</h3>
-                <p>
-                    Gegründet mit der Vision, Dodgeball in Zürich populärer zu
-                    machen, wachsen wir stetig als Community.
-                </p>
-
-                <h3>Unsere Werte</h3>
-                <ul>
-                    <li>Teamgeist & Zusammenhalt</li>
-                    <li>Leidenschaft für den Sport</li>
-                    <li>Respekt & Fairplay</li>
-                    <li>Spass am Spiel</li>
-                </ul>
-
-                <!-- KARUSSELL -->
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="Images/Mixed 2.TD.jpg" alt="Dodgeball 1" />
-                        <img
-                            src="Images/Damen 1.Turniertag.JPG"
-                            alt="Dodgeball 2"
-                        />
-                        <img
-                            src="Images/Damen 2.Turniertag.JPG"
-                            alt="Dodgeball 3"
-                        />
-                        <img
-                            src="Images/Herren 1.Turniertag.JPG"
-                            alt="Dodgeball 4"
-                        />
-                        <img
-                            src="Images/Herren 2.Turniertag.JPG"
-                            alt="Dodgeball 5"
-                        />
-                        <img src="Images/Turnier 1.jpeg" alt="Dodgeball 6" />
-                        <img src="Images/Turnier 2.jpeg" alt="Dodgeball 7" />
-                    </div>
-                    <button class="carousel-btn prev">❮</button>
-                    <button class="carousel-btn next">❯</button>
-                </div>
-            </div>
-        </aside>
-
-        <!-- SIDEBAR: TRAINING -->
-        <aside class="sidebar" id="sidebar-training">
-            <button class="sidebar-close">&times;</button>
-            <h2>Training</h2>
-
-            <div class="sidebar-content">
-                <h3>Trainingszeiten</h3>
-                <p><strong>Mittwoch:</strong> 18:00 – 19:30 Uhr</p>
-
-                <h3>Ort</h3>
-                <p>Three Point Halle, Dübendorf</p>
-
-                <h3>Auch für Newbies!</h3>
-                <p>
-                    Anfänger sind herzlich willkommen! Komm vorbei – wir
-                    erklären dir alles.
-                </p>
-
-                <a href="Kontakt.html" class="btn btn-primary"
-                    >Jetzt Mitmachen</a
-                >
-            </div>
-        </aside>
+        <app-sidebars></app-sidebars>
 
         <!-- MAIN CONTENT -->
         <section class="page-section contact-intro">
@@ -143,80 +47,9 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
         <!-- MAIN SCRIPT -->
+        <script src="js/components.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                /* HAMBURGER */
-                const hamburger = document.getElementById("hamburger");
-                const navLinks = document.getElementById("navLinks");
-
-                if (hamburger && navLinks) {
-                    hamburger.addEventListener("click", () => {
-                        navLinks.classList.toggle("active");
-                    });
-                }
-
-                /* SIDEBAR */
-                const sidebarTriggers =
-                    document.querySelectorAll(".sidebar-trigger");
-                const sidebarOverlay =
-                    document.getElementById("sidebarOverlay");
-                const sidebars = document.querySelectorAll(".sidebar");
-                const sidebarCloseButtons =
-                    document.querySelectorAll(".sidebar-close");
-
-                sidebarTriggers.forEach((trigger) => {
-                    trigger.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        const id = trigger.dataset.sidebar;
-                        const sidebar = document.getElementById(
-                            `sidebar-${id}`,
-                        );
-
-                        if (sidebar) {
-                            sidebar.classList.add("active");
-                            sidebarOverlay.classList.add("active");
-                        }
-                    });
-                });
-
-                function closeSidebar() {
-                    sidebars.forEach((sb) => sb.classList.remove("active"));
-                    sidebarOverlay.classList.remove("active");
-                }
-
-                sidebarCloseButtons.forEach((btn) =>
-                    btn.addEventListener("click", closeSidebar),
-                );
-                sidebarOverlay.addEventListener("click", closeSidebar);
-
-                document.addEventListener("keydown", (e) => {
-                    if (e.key === "Escape") closeSidebar();
-                });
-
-                /* KARUSSELL */
-                const carousel = document.querySelector(".carousel");
-                const prevBtn = document.querySelector(".carousel-btn.prev");
-                const nextBtn = document.querySelector(".carousel-btn.next");
-
-                if (carousel && prevBtn && nextBtn) {
-                    const images = carousel.querySelectorAll("img");
-                    let index = 0;
-
-                    function updateCarousel() {
-                        carousel.style.transform = `translateX(-${index * 100}%)`;
-                    }
-
-                    nextBtn.addEventListener("click", () => {
-                        index = (index + 1) % images.length;
-                        updateCarousel();
-                    });
-
-                    prevBtn.addEventListener("click", () => {
-                        index = (index - 1 + images.length) % images.length;
-                        updateCarousel();
-                    });
-                }
-
                 /* MAP */
                 if (document.getElementById("map")) {
                     const map = L.map("map").setView([47.39679, 8.60023], 13);
@@ -230,7 +63,7 @@
 
                     L.marker([47.39645, 8.60072])
                         .addTo(map)
-                        .bindPopup("Zürich Hunters – Trainingshalle");
+                        .bindPopup("Zürich Hunters - Trainingshalle");
                 }
             });
         </script>
