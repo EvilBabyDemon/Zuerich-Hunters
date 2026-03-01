@@ -1,193 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zürich Hunters - Dodgeball Team</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zürich Hunters – Dodgeball Team</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <app-header></app-header>
 
-<body>
+        <app-sidebars></app-sidebars>
 
-    <header>
-        <img src="Images/logo.png" alt="Zürich Hunters Logo" class="logo">
+        <main id="home">
+            <div class="logo-section">
+                <img src="Images/logo.png" class="large-logo" alt="" />
+                <img src="Images/lion.svg" class="lion-svg" alt="" />
+            </div>
 
-        <button class="hamburger" id="hamburger">☰</button>
+            <section class="banner">
+                <h1>Zürich Hunters</h1>
+                <p>Dodgeball mit Biss</p>
 
-        <nav class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about" class="sidebar-trigger" data-sidebar="about">Über uns</a>
-            <a href="#training" class="sidebar-trigger" data-sidebar="training">Training</a>
-            <a href="Turniere.html">Turnier</a>
-            <a href="Kontakt.html">Kontakt</a>
-        </nav>
-
-        <a href="Kontakt.html" class="header-button">Mitmachen</a>
-    </header>
-
-    <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- ===== SIDEBAR ÜBER UNS ===== -->
-    <aside class="sidebar" id="sidebar-about">
-        <button class="sidebar-close">&times;</button>
-        <h2>Über uns</h2>
-
-        <div class="sidebar-content">
-            <p>Wir sind die Zürich Hunters, das Dodgeball Team aus deiner Stadt Zürich.</p>
-
-            <h3>Unsere Geschichte</h3>
-            <p>Gegründet mit der Vision, Dodgeball in Zürich populärer zu machen.</p>
-
-            <h3>Unsere Werte</h3>
-            <ul>
-                <li>Teamgeist & Zusammenhalt</li>
-                <li>Leidenschaft</li>
-                <li>Respekt & Fairplay</li>
-                <li>Weiterentwicklung</li>
-                <li>Spass</li>
-            </ul>
-
-            <div class="carousel-container">
-                <div class="carousel">
-                    <img src="Images/Mixed 2.TD.jpg" alt="Dodgeball 1">
-                    <img src="Images/Damen 1.Turniertag.JPG" alt="Dodgeball 2">
-                    <img src="Images/Damen 2.Turniertag.JPG" alt="Dodgeball 3">
-                    <img src="Images/Herren 1.Turniertag.JPG" alt="Dodgeball 4">
-                    <img src="Images/Herren 2.Turniertag.JPG" alt="Dodgeball 5">
-                    <img src="Images/Turnier 1.jpeg" alt="Dodgeball 6">
-                    <img src="Images/Turnier 2.jpeg" alt="Dodgeball 7">
+                <div class="hero-buttons">
+                    <a href="Kontakt.html" class="btn btn-primary"
+                        >Jetzt Mitmachen</a
+                    >
+                    <a
+                        href="#about"
+                        class="btn btn-secondary sidebar-trigger"
+                        data-sidebar="about"
+                        >Über uns</a
+                    >
                 </div>
-                <button class="carousel-btn prev">❮</button>
-                <button class="carousel-btn next">❯</button>
-            </div>
-        </div>
-    </aside>
+            </section>
 
-    <!-- ===== SIDEBAR TRAINING ===== -->
-    <aside class="sidebar" id="sidebar-training">
-        <button class="sidebar-close">&times;</button>
-        <h2>Training</h2>
+            <section class="two-column-banner">
+                <div class="banner-column">
+                    <img
+                        src="Images/Wappen Flagge.png"
+                        class="banner-icon"
+                        alt=""
+                    />
+                    <h3>Komm in unser Team!</h3>
+                    <p>Motivierte Spieler gesucht - Anfänger willkommen.</p>
+                </div>
 
-        <div class="sidebar-content">
-            <p><strong>Mittwoch:</strong> 18:00 – 19:30</p>
-            <p>Three Point Halle, Dübendorf</p>
-            <p>Auch Anfänger willkommen!</p>
-            <a href="Kontakt.html" class="btn btn-primary">Jetzt Mitmachen</a>
-        </div>
-    </aside>
+                <div class="banner-column">
+                    <img
+                        src="Images/Symbol_Ball.png"
+                        class="banner-icon"
+                        alt=""
+                    />
+                    <h3>Let's play Dodgeball!</h3>
+                    <p>Action, Teamgeist & Adrenalin.</p>
+                </div>
+            </section>
 
-    <main id="home">
+            <section id="about" class="about-section">
+                <div class="about-content">
+                    <h2>Über uns</h2>
+                    <p>Werde Teil des Zürich Hunters Rudels.</p>
+                    <a
+                        class="btn btn-primary sidebar-trigger"
+                        data-sidebar="about"
+                        >Mehr erfahren</a
+                    >
+                </div>
 
-        <div class="logo-section">
-            <img src="Images/logo.png" class="large-logo" alt="">
-            <img src="Images/lion.svg" class="lion-svg" alt="">
-        </div>
+                <div class="about-images">
+                    <img
+                        src="Images/Herren 1.Turniertag.JPG"
+                        class="about-img"
+                        alt=""
+                    />
+                    <img src="Images/Mixed 2.TD.jpg" class="about-img" alt="" />
+                </div>
+            </section>
 
-        <section class="banner">
-            <h1>Zürich Hunters</h1>
-            <p>Dodgeball mit Biss</p>
+            <section id="contact" class="contact-section">
+                <div class="contact-content">
+                    <h2>Kontakt</h2>
+                    <p>
+                        Instagram:
+                        <a href="https://www.instagram.com/zurichhunters/"
+                            >zurich hunters</a
+                        >
+                    </p>
+                    <p>Email: zurichhunters@gmx.ch</p>
+                    <a href="mailto:zuerichhunters@gmx.ch">Email senden</a>
+                </div>
 
-            <div class="hero-buttons">
-                <a href="Kontakt.html" class="btn btn-primary">Jetzt Mitmachen</a>
-                <a href="#about" class="btn btn-secondary sidebar-trigger" data-sidebar="about">Über uns</a>
-            </div>
-        </section>
+                <div class="contact-images">
+                    <img
+                        src="Images/Instagram.jpg"
+                        class="contact-img"
+                        alt=""
+                    />
+                </div>
+            </section>
+        </main>
 
-        <section class="two-column-banner">
-            <div class="banner-column">
-                <img src="Images/Wappen Flagge.png" class="banner-icon" alt="">
-                <h3>Komm in unser Team!</h3>
-                <p>Motivierte Spieler gesucht – Anfänger willkommen.</p>
-            </div>
-
-            <div class="banner-column">
-                <img src="Images/Symbol_Ball.png" class="banner-icon" alt="">
-                <h3>Let's play Dodgeball!</h3>
-                <p>Action, Teamgeist & Adrenalin.</p>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="about-content">
-                <h2>Über uns</h2>
-                <p>Werde Teil des Zürich Hunters Rudels.</p>
-                <a class="btn btn-primary sidebar-trigger" data-sidebar="about">Mehr erfahren</a>
-            </div>
-
-            <div class="about-images">
-                <img src="Images/Herren 1.Turniertag.JPG" class="about-img" alt="">
-                <img src="Images/Mixed 2.TD.jpg" class="about-img" alt="">
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="contact-content">
-                <h2>Kontakt</h2>
-                <p>Instagram: zurich hunters</p>
-                <p>Email: zurichhunters@gmx.ch</p>
-                <a href="mailto:zuerichhunters@gmx.ch">Email senden</a>
-            </div>
-
-            <div class="contact-images">
-                <img src="Images/Instagram.jpg" class="contact-img" alt="">
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ===== SCRIPTS ===== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            /* HAMBURGER */
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+        <!-- ===== SCRIPTS ===== -->
+        <script src="js/components.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Any page specific logic here
             });
-
-            /* SIDEBAR */
-            const triggers = document.querySelectorAll('.sidebar-trigger');
-            const overlay = document.getElementById('sidebarOverlay');
-            const sidebars = document.querySelectorAll('.sidebar');
-
-            triggers.forEach(t => {
-                t.addEventListener('click', e => {
-                    e.preventDefault();
-                    const id = t.dataset.sidebar;
-                    document.getElementById('sidebar-' + id).classList.add('active');
-                    overlay.classList.add('active');
-                });
-            });
-
-            overlay.addEventListener('click', closeSidebars);
-            document.querySelectorAll('.sidebar-close').forEach(b => b.addEventListener('click', closeSidebars));
-
-            function closeSidebars() {
-                sidebars.forEach(s => s.classList.remove('active'));
-                overlay.classList.remove('active');
-            }
-
-            /* KARUSSELL */
-            let index = 0;
-            const carousel = document.querySelector('.carousel');
-            const imgs = document.querySelectorAll('.carousel img');
-
-            document.querySelector('.next').onclick = () => {
-                index = (index + 1) % imgs.length;
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-            };
-
-            document.querySelector('.prev').onclick = () => {
-                index = (index - 1 + imgs.length) % imgs.length;
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-            };
-        });
-    </script>
-
-</body>
-
+        </script>
+    </body>
 </html>
