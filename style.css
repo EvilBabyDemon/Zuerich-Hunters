@@ -285,7 +285,10 @@ section p {
     height: auto;
     border-radius: 10px;
 }
-
+.about-panel {
+    position: fixed;
+    z-index: 2000;
+}
 
 /* Contact Section */
 
