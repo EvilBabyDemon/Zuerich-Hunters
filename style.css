@@ -82,12 +82,13 @@ header a:hover {
 }
 
 .banner h1 {
-    font-size: 56px;
+    font-size: clamp(28px, 6vw, 56px);
     color: rgb(255, 255, 255);
     margin: 0 0 10px 0;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+    line-height: 1.1;
 }
 
 .banner p {
