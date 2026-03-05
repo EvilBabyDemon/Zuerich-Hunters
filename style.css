@@ -346,6 +346,7 @@ section p {
 
     .banner p {
         font-size: clamp(24px, 5vw, 48px);
+        line-height: 1.2:;
     }
 
     .hero-buttons {
