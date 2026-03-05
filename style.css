@@ -341,11 +341,11 @@ section p {
 
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 36px;
+        font-size: 28px;
     }
 
     .banner p {
-        font-size: 20px;
+        font-size: clamp(24px, 5vw, 48px);
     }
 
     .hero-buttons {
