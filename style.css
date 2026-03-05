@@ -787,3 +787,9 @@ section p {
 .gallery-img {
     cursor: zoom-in;
 }
+/* Fix für lange Wörter auf Mobile */
+
+h1, h2, h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
