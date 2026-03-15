@@ -662,6 +662,13 @@ section p {
         margin: 0 auto;
     }
 
+    .large-logo {
+        display: none
+        width: 160px;
+        max-width: 80%;
+        height: auto;
+    }
+
     /* TWO COLUMN BANNER */
     .two-column-banner {
         grid-template-columns: 1fr;
