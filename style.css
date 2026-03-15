@@ -655,12 +655,6 @@ section p {
         text-align: center;
     }
 
-    .large-logo {
-        width: 160px;
-        max-width: 80%;
-        height: auto;
-    }
-
     .lion-svg {
         width: 240px;
         max-width: 90%;
